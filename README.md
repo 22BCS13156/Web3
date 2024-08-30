@@ -1,25 +1,27 @@
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+# Token
 
-/*
-       REQUIREMENTS
-    1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
-    2. Your contract will have a mapping of addresses to balances (address => uint)
-    3. You will have a mint function that takes two parameters: an address and a value. 
-       The function then increases the total supply by that number and increases the balance 
-       of the “sender” address by that amount
-    4. Your contract will have a burn function, which works the opposite of the mint function, as it will destroy tokens. 
-       It will take an address and value just like the mint functions. It will then deduct the value from the total supply 
-       and from the balance of the “sender”.
-    5. Lastly, your burn function should have conditionals to make sure the balance of "sender" is greater than or equal 
-       to the amount that is supposed to be burned.
-*/
+This Solidity contract allows us to manage a token with mint and burn functionalities. 
+
+## Description
+
+This Solidity contract allows us to manage a token with mint and burn functionalities. The mint function increases the total supply and assigns tokens to an address, while the burn function reduces the total supply and the tokens of an address if they have enough tokens.
+
+## Getting Started
+
+### Executing program
+
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., To.sol). Copy and paste the following code into the file:
+
+solidity
+pragma solidity 0.8.18;
 
 contract Token 
 {
     // public variables here
 
-    string public Tname= "Gaurav";
+    string public Tname= "GAURAV";
     string public Tabbrv ="GK";
     uint public totalSupply =0;
     
@@ -47,3 +49,12 @@ contract Token
                                        
     }
 }
+
+
+
+
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
+
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "Token" contract from the dropdown menu, and then click on the "Deploy" button.
+
+Once the contract is deployed, you can interact with it by calling the mint and burn function. Click on the "Token" contract in the left-hand sidebar, and then fill the address and value that is token to be added in mint function. click on the "transact" button to execute the function. check the balance after adding tokens. Now to burn the tokens fill the address and value that is token to be deducted in burn function. click on the "transact" button to execute the function. check the balance after deducting tokens. At last check whether the token burnt is not greater than the available balance
